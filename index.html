@@ -129,6 +129,28 @@
             font-weight: 500;
         }
 
+        /* Visitor Counter */
+        .visitor-counter {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--neon-green);
+            border-radius: 10px;
+            padding: 10px 15px;
+            z-index: 1000;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            color: var(--neon-green);
+            text-shadow: 0 0 10px var(--neon-green);
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+        }
+
+        .visitor-counter i {
+            margin-right: 8px;
+            color: var(--neon-blue);
+        }
+
         /* Features Section */
         .features {
             display: grid;
@@ -208,7 +230,7 @@
             font-size: 1.1rem;
         }
 
-        /* Spin Box Section */
+        /* Spin Box Section - Fixed for Mobile */
         .spin-section {
             background: linear-gradient(145deg, rgba(10, 10, 10, 0.9), rgba(20, 20, 40, 0.8));
             border: 2px solid;
@@ -289,12 +311,6 @@
             position: relative;
             transition: transform 3s cubic-bezier(0.2, 0.8, 0.3, 1);
             box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
-            animation: wheelRotate 20s linear infinite;
-        }
-
-        @keyframes wheelRotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
 
         .wheel-center {
@@ -657,7 +673,7 @@
             z-index: 1;
         }
 
-        /* Responsive Design */
+        /* Responsive Design - Fixed for Mobile */
         @media (max-width: 768px) {
             .logo {
                 font-size: 3rem;
@@ -673,6 +689,7 @@
             
             .spin-section, .loader-section {
                 padding: 30px 20px;
+                margin: 20px 10px;
             }
             
             .wheel-container {
@@ -693,6 +710,52 @@
             .spin-info {
                 flex-direction: column;
                 gap: 15px;
+            }
+            
+            .spin-box {
+                padding: 20px 15px;
+            }
+            
+            .key-value {
+                font-size: 1.2rem;
+                padding: 15px;
+                word-break: break-all;
+            }
+            
+            .visitor-counter {
+                top: 10px;
+                right: 10px;
+                font-size: 0.8rem;
+                padding: 8px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wheel-container {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .spin-btn {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+            
+            .download-btn {
+                padding: 15px 40px;
+                font-size: 1.2rem;
+            }
+            
+            .spin-title, .loader-title {
+                font-size: 2rem;
+            }
+            
+            .visitor-counter {
+                position: relative;
+                top: auto;
+                right: auto;
+                display: inline-block;
+                margin-bottom: 20px;
             }
         }
         
@@ -742,6 +805,12 @@
     <!-- Background Elements -->
     <div class="esports-bg"></div>
     <canvas class="matrix-bg" id="matrixCanvas"></canvas>
+
+    <!-- Visitor Counter -->
+    <div class="visitor-counter">
+        <i class="fas fa-users"></i>
+        <span id="visitorCount">0</span> Visitors
+    </div>
 
     <div class="container">
         <!-- Header -->
@@ -903,6 +972,20 @@
         
         setInterval(drawMatrix, 35);
         
+        // Visitor Counter
+        function updateVisitorCount() {
+            let count = localStorage.getItem('visitorCount');
+            if (!count) {
+                count = 0;
+            }
+            count = parseInt(count) + 1;
+            localStorage.setItem('visitorCount', count);
+            document.getElementById('visitorCount').textContent = count.toLocaleString();
+        }
+        
+        // Update visitor count on page load
+        updateVisitorCount();
+        
         // Spin Wheel Functionality
         const wheel = document.getElementById('wheel');
         const spinBtn = document.getElementById('spinBtn');
@@ -1033,7 +1116,15 @@
             const extraDegrees = Math.floor(Math.random() * 360);
             const totalRotation = rotations * 360 + extraDegrees;
             
+            // Reset wheel rotation first
+            wheel.style.transition = 'none';
+            wheel.style.transform = 'rotate(0deg)';
+            
+            // Force reflow
+            void wheel.offsetWidth;
+            
             // Apply rotation with CSS transition
+            wheel.style.transition = 'transform 3s cubic-bezier(0.2, 0.8, 0.3, 1)';
             wheel.style.transform = `rotate(${totalRotation}deg)`;
             
             // After spinning animation completes
