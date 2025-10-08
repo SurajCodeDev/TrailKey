@@ -972,19 +972,30 @@
         
         setInterval(drawMatrix, 35);
         
-        // Visitor Counter
-        function updateVisitorCount() {
+        // Random Visitor Counter
+        function updateRandomVisitorCount() {
             let count = localStorage.getItem('visitorCount');
             if (!count) {
-                count = 0;
+                // Start with a random number between 1000 and 5000
+                count = Math.floor(Math.random() * 4000) + 1000;
+            } else {
+                count = parseInt(count);
             }
-            count = parseInt(count) + 1;
+            
+            // Add a random number between 1 and 5 to simulate new visitors
+            const randomIncrement = Math.floor(Math.random() * 5) + 1;
+            count += randomIncrement;
+            
             localStorage.setItem('visitorCount', count);
             document.getElementById('visitorCount').textContent = count.toLocaleString();
+            
+            // Schedule next random update (between 5 and 15 seconds)
+            const nextUpdate = Math.floor(Math.random() * 10000) + 5000;
+            setTimeout(updateRandomVisitorCount, nextUpdate);
         }
         
         // Update visitor count on page load
-        updateVisitorCount();
+        updateRandomVisitorCount();
         
         // Spin Wheel Functionality
         const wheel = document.getElementById('wheel');
