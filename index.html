@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BESTCHEAT / BGMI LOADER - THE NEXT LEVEL | THE GOD OF POWER</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --neon-blue: #00f3ff;
+            --neon-green: #00ff88;
+            --neon-pink: #ff0080;
+            --neon-purple: #b967ff;
+            --neon-orange: #ff8c00;
+            --dark-bg: #0a0a0a;
+            --darker-bg: #050505;
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .esports-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 243, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 0, 128, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
+        }
+
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.15;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 60px 0;
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 243, 255, 0.1), transparent);
+            animation: shine 6s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .logo {
+            font-size: 5rem;
+            font-weight: 900;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(45deg, var(--neon-green), var(--neon-blue), var(--neon-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(0, 255, 136, 0.5); }
+            to { text-shadow: 0 0 30px rgba(0, 243, 255, 0.7), 0 0 40px rgba(0, 255, 136, 0.5); }
+        }
+
+        .slogan {
+            font-size: 2.2rem;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-blue);
+            text-shadow: 0 0 20px var(--neon-blue);
+            margin-bottom: 20px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        /* Visitor Counter */
+        .visitor-counter {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--neon-green);
+            border-radius: 10px;
+            padding: 10px 15px;
+            z-index: 1000;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            color: var(--neon-green);
+            text-shadow: 0 0 10px var(--neon-green);
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+        }
+
+        .visitor-counter i {
+            margin-right: 8px;
+            color: var(--neon-blue);
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, rgba(10, 10, 10, 0.9), rgba(30, 30, 30, 0.7));
+            border: 1px solid;
+            border-image: linear-gradient(45deg, var(--neon-green), var(--neon-blue)) 1;
+            border-radius: 15px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.2s; }
+        .feature-card:nth-child(2) { animation-delay: 0.4s; }
+        .feature-card:nth-child(3) { animation-delay: 0.6s; }
+        .feature-card:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .feature-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            color: var(--neon-green);
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px var(--neon-green);
+        }
+
+        .feature-title {
+            font-size: 1.6rem;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 15px;
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        .feature-desc {
+            color: #cccccc;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* Spin Box Section - Fixed for Mobile */
+        .spin-section {
+            background: linear-gradient(145deg, rgba(10, 10, 10, 0.9), rgba(20, 20, 40, 0.8));
+            border: 2px solid;
+            border-image: linear-gradient(45deg, var(--neon-pink), var(--neon-orange)) 1;
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .spin-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 0, 128, 0.1) 0%, transparent 70%);
+            animation: rotate 15s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .spin-title {
+            font-size: 2.5rem;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 20px;
+            color: var(--neon-pink);
+            text-shadow: 0 0 15px var(--neon-pink);
+            position: relative;
+            z-index: 1;
+        }
+
+        .spin-desc {
+            color: #cccccc;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .spin-box {
+            background: rgba(5, 5, 5, 0.8);
+            border: 2px solid var(--neon-blue);
+            border-radius: 15px;
+            padding: 40px 30px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
+        }
+
+        .wheel-container {
+            width: 280px;
+            height: 280px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+
+        .wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(
+                var(--neon-pink), var(--neon-orange), var(--neon-green), 
+                var(--neon-blue), var(--neon-purple), var(--neon-pink)
+            );
+            position: relative;
+            transition: transform 3s cubic-bezier(0.2, 0.8, 0.3, 1);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+        }
+
+        .wheel-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: #000;
+            border-radius: 50%;
+            z-index: 2;
+            border: 3px solid var(--neon-green);
+            box-shadow: 0 0 15px var(--neon-green);
+        }
+
+        .wheel-pointer {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 50px;
+            background: #ff0000;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            z-index: 3;
+            filter: drop-shadow(0 0 5px #ff0000);
+        }
+
+        .spin-btn {
+            background: linear-gradient(45deg, var(--neon-pink), var(--neon-orange));
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.3rem;
+            font-family: 'Orbitron', sans-serif;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(255, 0, 128, 0.5);
+            position: relative;
+            z-index: 1;
+            animation: pulse 2s infinite;
+        }
+
+        .spin-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 0, 128, 0.7);
+            animation: none;
+        }
+
+        .spin-btn:active {
+            transform: translateY(1px);
+        }
+
+        .spin-btn:disabled {
+            background: #666;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+            animation: none;
+        }
+
+        .key-display {
+            background: rgba(5, 5, 5, 0.9);
+            border: 2px solid var(--neon-green);
+            border-radius: 15px;
+            padding: 30px 25px;
+            margin-top: 20px;
+            display: none;
+            animation: fadeInUp 0.5s ease-out;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+        }
+
+        .key-title {
+            font-size: 1.4rem;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 20px;
+            color: var(--neon-green);
+            text-shadow: 0 0 10px var(--neon-green);
+        }
+
+        .key-value {
+            font-family: 'Courier New', monospace;
+            font-size: 1.6rem;
+            background: #111;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            letter-spacing: 3px;
+            border: 1px solid #333;
+            color: var(--neon-green);
+            user-select: all;
+            cursor: pointer;
+            text-shadow: 0 0 10px var(--neon-green);
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .key-value:hover {
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+        }
+
+        .copy-btn {
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: 'Rajdhani', sans-serif;
+            transition: all 0.3s ease;
+            margin: 5px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .copy-btn:hover {
+            background: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 243, 255, 0.4);
+        }
+
+        .spin-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .spin-count, .timer {
+            font-size: 1.1rem;
+            color: var(--neon-orange);
+            font-family: 'Orbitron', sans-serif;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--neon-orange);
+        }
+
+        /* Loader Download Section */
+        .loader-section {
+            background: linear-gradient(145deg, rgba(10, 10, 10, 0.9), rgba(20, 20, 40, 0.8));
+            border: 2px solid;
+            border-image: linear-gradient(45deg, var(--neon-blue), var(--neon-purple)) 1;
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .loader-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 243, 255, 0.1), transparent);
+            animation: shine 8s infinite;
+        }
+
+        .loader-title {
+            font-size: 3rem;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 25px;
+            color: var(--neon-blue);
+            text-shadow: 0 0 20px var(--neon-blue);
+            position: relative;
+            z-index: 1;
+        }
+
+        .loader-desc {
+            color: #cccccc;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            font-size: 1.3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .download-btn {
+            background: linear-gradient(45deg, var(--neon-green), var(--neon-blue));
+            color: #000;
+            border: none;
+            padding: 20px 60px;
+            font-size: 1.5rem;
+            font-family: 'Orbitron', sans-serif;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 20px 0;
+            box-shadow: 0 5px 25px rgba(0, 255, 136, 0.5);
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            position: relative;
+            z-index: 1;
+            animation: pulse 2s infinite;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.7);
+            animation: none;
+        }
+
+        .download-btn i {
+            font-size: 1.8rem;
+        }
+
+        .loader-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .loader-feature {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .loader-feature:nth-child(1) { animation-delay: 0.7s; }
+        .loader-feature:nth-child(2) { animation-delay: 0.9s; }
+        .loader-feature:nth-child(3) { animation-delay: 1.1s; }
+
+        .loader-feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 243, 255, 0.3);
+            border-color: var(--neon-blue);
+        }
+
+        .loader-feature i {
+            font-size: 3rem;
+            color: var(--neon-green);
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px var(--neon-green);
+        }
+
+        .loader-feature h4 {
+            font-size: 1.4rem;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 15px;
+            color: var(--neon-blue);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px 30px;
+            background: rgba(5, 5, 5, 0.9);
+            border-top: 2px solid var(--neon-green);
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.05), transparent);
+            animation: shine 10s infinite;
+        }
+
+        .footer-text {
+            color: #cccccc;
+            margin-bottom: 30px;
+            font-size: 1.3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--neon-green);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.8rem;
+            border: 2px solid transparent;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+        }
+
+        .social-link:hover {
+            background: var(--neon-green);
+            color: #000;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.7);
+            border-color: var(--neon-green);
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            color: #cccccc;
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .contact-info a:hover {
+            color: var(--neon-green);
+            text-shadow: 0 0 10px var(--neon-green);
+        }
+
+        .copyright {
+            color: #666;
+            font-size: 1rem;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive Design - Fixed for Mobile */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 3rem;
+            }
+            
+            .slogan {
+                font-size: 1.6rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .spin-section, .loader-section {
+                padding: 30px 20px;
+                margin: 20px 10px;
+            }
+            
+            .wheel-container {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .social-links {
+                gap: 15px;
+            }
+            
+            .social-link {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .spin-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .spin-box {
+                padding: 20px 15px;
+            }
+            
+            .key-value {
+                font-size: 1.2rem;
+                padding: 15px;
+                word-break: break-all;
+            }
+            
+            .visitor-counter {
+                top: 10px;
+                right: 10px;
+                font-size: 0.8rem;
+                padding: 8px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wheel-container {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .spin-btn {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+            
+            .download-btn {
+                padding: 15px 40px;
+                font-size: 1.2rem;
+            }
+            
+            .spin-title, .loader-title {
+                font-size: 2rem;
+            }
+            
+            .visitor-counter {
+                position: relative;
+                top: auto;
+                right: auto;
+                display: inline-block;
+                margin-bottom: 20px;
+            }
+        }
+        
+        /* Spin Result Styles */
+        .spin-result {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.4rem;
+            font-family: 'Orbitron', sans-serif;
+            animation: pulse 2s infinite;
+        }
+        
+        .trial-key {
+            background: rgba(0, 255, 136, 0.1);
+            border: 2px solid var(--neon-green);
+            color: var(--neon-green);
+            text-shadow: 0 0 10px var(--neon-green);
+        }
+        
+        .discount {
+            background: rgba(255, 165, 0, 0.1);
+            border: 2px solid var(--neon-orange);
+            color: var(--neon-orange);
+            text-shadow: 0 0 10px var(--neon-orange);
+        }
+        
+        .better-luck {
+            background: rgba(255, 0, 0, 0.1);
+            border: 2px solid #ff0000;
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000;
+        }
+        
+        .extra-spin {
+            background: rgba(0, 191, 255, 0.1);
+            border: 2px solid var(--neon-blue);
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="esports-bg"></div>
+    <canvas class="matrix-bg" id="matrixCanvas"></canvas>
+
+    <!-- Visitor Counter -->
+    <div class="visitor-counter">
+        <i class="fas fa-users"></i>
+        <span id="visitorCount">0</span> Visitors
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1 class="logo">BESTCHEAT</h1>
+            <div class="slogan">BGMI LOADER</div>
+            <div class="tagline">THE NEXT LEVEL | THE GOD OF POWER</div>
+        </header>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-crosshairs"></i>
+                </div>
+                <h3 class="feature-title">AIMBOT</h3>
+                <p class="feature-desc">Precision aiming with customizable settings. Headshot every enemy with perfect accuracy.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3 class="feature-title">ESP</h3>
+                <p class="feature-desc">See through walls and track enemy movements. Never be surprised again.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3 class="feature-title">BULLET TRACK</h3>
+                <p class="feature-desc">Track your bullets and see where they hit. Perfect for long-range sniping.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-low-vision"></i>
+                </div>
+                <h3 class="feature-title">VISIBILITY</h3>
+                <p class="feature-desc">Enhance player visibility and spot enemies from greater distances.</p>
+            </div>
+        </section>
+
+        <!-- Spin Box Section -->
+        <section class="spin-section">
+            <h2 class="spin-title">GET YOUR TRIAL KEY</h2>
+            <p class="spin-desc">Spin the wheel to get amazing rewards including trial keys, discounts, and more! You can spin five times per day.</p>
+            
+            <div class="spin-box">
+                <div class="wheel-container">
+                    <div class="wheel-pointer"></div>
+                    <div class="wheel" id="wheel">
+                        <div class="wheel-center"></div>
+                    </div>
+                </div>
+                
+                <button class="spin-btn" id="spinBtn">
+                    <i class="fas fa-redo"></i> SPIN FOR REWARD
+                </button>
+                
+                <div class="spin-info">
+                    <div class="spin-count">Spins Left: <span id="spinCount">5</span></div>
+                    <div class="timer" id="timer">Reset: <span id="countdown">24:00:00</span></div>
+                </div>
+                
+                <div class="key-display" id="keyDisplay">
+                    <div id="spinResult" class="spin-result"></div>
+                    <div id="rewardDetails">
+                        <h3 class="key-title" id="rewardTitle">YOUR REWARD:</h3>
+                        <div class="key-value" id="keyValue"></div>
+                        <button class="copy-btn" id="copyBtn">
+                            <i class="fas fa-copy"></i> COPY KEY
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loader Download Section -->
+        <section class="loader-section">
+            <h2 class="loader-title">DOWNLOAD BGMI LOADER</h2>
+            <p class="loader-desc">Install our advanced BGMI loader to activate all premium features. Easy to use and completely undetectable.</p>
+            
+            <a href="https://t.me/nextlevlfile/156?single" class="download-btn" download>
+                <i class="fas fa-download"></i> DOWNLOAD LOADER APK
+            </a>
+            
+            <div class="loader-features">
+                <div class="loader-feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>UNDETECTABLE</h4>
+                    <p>Advanced bypass technology</p>
+                </div>
+                <div class="loader-feature">
+                    <i class="fas fa-bolt"></i>
+                    <h4>FAST INJECTION</h4>
+                    <p>Quick and seamless activation</p>
+                </div>
+                <div class="loader-feature">
+                    <i class="fas fa-sync-alt"></i>
+                    <h4>AUTO UPDATE</h4>
+                    <p>Always compatible with latest version</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-text">Connect with us for updates and support</div>
+        <div class="social-links">
+            <a href="https://t.me/BESTCHEAT_VIP" class="social-link" target="_blank">
+                <i class="fab fa-telegram"></i>
+            </a>
+            <a href="https://wa.me/7015742792" class="social-link" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <div class="contact-info">
+            <a href="https://t.me/BESTCHEAT_VIP" target="_blank">Telegram: @BESTCHEAT_VIP</a> | 
+            <a href="https://wa.me/7015742792" target="_blank">WhatsApp: 7015742792</a>
+        </div>
+        <div class="copyright">© 2023 BESTCHEAT BGMI LOADER. All rights reserved.</div>
+    </footer>
+
+    <script>
+        // Matrix Background Effect
+        const canvas = document.getElementById('matrixCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%&*";
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        
+        const drops = [];
+        for (let i = 0; i < columns; i++) {
+            drops[i] = Math.random() * -100;
+        }
+        
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#00ff88';
+            ctx.font = fontSize + 'px monospace';
+            
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                
+                drops[i]++;
+            }
+        }
+        
+        setInterval(drawMatrix, 35);
+        
+        // Random Visitor Counter
+        function updateRandomVisitorCount() {
+            let count = localStorage.getItem('visitorCount');
+            if (!count) {
+                // Start with a random number between 1000 and 5000
+                count = Math.floor(Math.random() * 4000) + 1000;
+            } else {
+                count = parseInt(count);
+            }
+            
+            // Add a random number between 1 and 5 to simulate new visitors
+            const randomIncrement = Math.floor(Math.random() * 5) + 1;
+            count += randomIncrement;
+            
+            localStorage.setItem('visitorCount', count);
+            document.getElementById('visitorCount').textContent = count.toLocaleString();
+            
+            // Schedule next random update (between 5 and 15 seconds)
+            const nextUpdate = Math.floor(Math.random() * 10000) + 5000;
+            setTimeout(updateRandomVisitorCount, nextUpdate);
+        }
+        
+        // Update visitor count on page load
+        updateRandomVisitorCount();
+        
+        // Spin Wheel Functionality
+        const wheel = document.getElementById('wheel');
+        const spinBtn = document.getElementById('spinBtn');
+        const keyDisplay = document.getElementById('keyDisplay');
+        const keyValue = document.getElementById('keyValue');
+        const copyBtn = document.getElementById('copyBtn');
+        const timer = document.getElementById('timer');
+        const countdown = document.getElementById('countdown');
+        const spinCount = document.getElementById('spinCount');
+        const spinResult = document.getElementById('spinResult');
+        const rewardTitle = document.getElementById('rewardTitle');
+        
+        // Available rewards with weights (higher number = more probability)
+        const rewards = [
+            { type: "trial-key", value: "24HxBGMI-Loaderxogsw", weight: 15, text: "BGMI Loader Trial Key" },
+            { type: "trial-key", value: "BESTCHEAT-X-PAPA", weight: 15, text: "BESTCHEAT Loader Trial Key" },
+            { type: "discount", value: "20% OFF", weight: 20, text: "20% Discount Coupon" },
+            { type: "discount", value: "15% OFF", weight: 25, text: "15% Discount Coupon" },
+            { type: "better-luck", value: "Better Luck Next Time", weight: 15, text: "Better Luck Next Time" },
+            { type: "extra-spin", value: "Extra Spin", weight: 10, text: "Extra Spin" }
+        ];
+        
+        let spinsLeft = 5;
+        let isSpinning = false;
+        
+        // Initialize spins from localStorage
+        function initializeSpins() {
+            const savedSpins = localStorage.getItem('spinsLeft');
+            const lastReset = localStorage.getItem('lastReset');
+            const now = new Date().getTime();
+            
+            // Reset spins if it's a new day
+            if (lastReset) {
+                const timeDiff = now - parseInt(lastReset);
+                const hoursDiff = timeDiff / (1000 * 60 * 60);
+                
+                if (hoursDiff >= 24) {
+                    spinsLeft = 5;
+                    localStorage.setItem('spinsLeft', spinsLeft);
+                    localStorage.setItem('lastReset', now.toString());
+                } else {
+                    spinsLeft = savedSpins ? parseInt(savedSpins) : 5;
+                }
+            } else {
+                localStorage.setItem('lastReset', now.toString());
+                localStorage.setItem('spinsLeft', '5');
+            }
+            
+            spinCount.textContent = spinsLeft;
+            updateTimer();
+        }
+        
+        // Update countdown timer
+        function updateTimer() {
+            const lastReset = localStorage.getItem('lastReset');
+            if (!lastReset) return;
+            
+            const resetTime = parseInt(lastReset) + (24 * 60 * 60 * 1000);
+            const now = new Date().getTime();
+            const timeLeft = resetTime - now;
+            
+            if (timeLeft <= 0) {
+                // Reset spins
+                spinsLeft = 5;
+                localStorage.setItem('spinsLeft', spinsLeft);
+                localStorage.setItem('lastReset', now.toString());
+                spinCount.textContent = spinsLeft;
+                updateTimer();
+                return;
+            }
+            
+            const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            countdown.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        // Get random reward based on weights
+        function getRandomReward() {
+            const totalWeight = rewards.reduce((sum, reward) => sum + reward.weight, 0);
+            let random = Math.random() * totalWeight;
+            
+            for (const reward of rewards) {
+                if (random < reward.weight) {
+                    return reward;
+                }
+                random -= reward.weight;
+            }
+            
+            return rewards[0]; // fallback
+        }
+        
+        // Spin the wheel
+        spinBtn.addEventListener('click', () => {
+            if (isSpinning || spinsLeft <= 0) return;
+            
+            isSpinning = true;
+            spinBtn.disabled = true;
+            spinsLeft--;
+            localStorage.setItem('spinsLeft', spinsLeft.toString());
+            spinCount.textContent = spinsLeft;
+            
+            // Get random reward
+            const reward = getRandomReward();
+            
+            // Calculate rotation (multiple full rotations + segment)
+            const fullRotations = 5;
+            const segmentAngle = 360 / rewards.length;
+            const rewardIndex = rewards.findIndex(r => r === reward);
+            const targetRotation = fullRotations * 360 + (360 - (rewardIndex * segmentAngle)) - (segmentAngle / 2);
+            
+            // Apply rotation with animation
+            wheel.style.transition = 'transform 3s cubic-bezier(0.2, 0.8, 0.3, 1)';
+            wheel.style.transform = `rotate(${targetRotation}deg)`;
+            
+            // Show result after animation
+            setTimeout(() => {
+                isSpinning = false;
+                spinBtn.disabled = false;
+                
+                // Display the reward
+                keyDisplay.style.display = 'block';
+                
+                // Set appropriate styling and text based on reward type
+                spinResult.className = 'spin-result';
+                spinResult.textContent = reward.text;
+                
+                if (reward.type === 'trial-key') {
+                    spinResult.classList.add('trial-key');
+                    keyValue.textContent = reward.value;
+                    rewardTitle.textContent = "YOUR TRIAL KEY:";
+                    document.getElementById('rewardDetails').style.display = 'block';
+                } 
+                else if (reward.type === 'discount') {
+                    spinResult.classList.add('discount');
+                    keyValue.textContent = reward.value;
+                    rewardTitle.textContent = "YOUR DISCOUNT CODE:";
+                    document.getElementById('rewardDetails').style.display = 'block';
+                }
+                else if (reward.type === 'better-luck') {
+                    spinResult.classList.add('better-luck');
+                    document.getElementById('rewardDetails').style.display = 'none';
+                }
+                else if (reward.type === 'extra-spin') {
+                    spinResult.classList.add('extra-spin');
+                    spinsLeft++;
+                    localStorage.setItem('spinsLeft', spinsLeft.toString());
+                    spinCount.textContent = spinsLeft;
+                    document.getElementById('rewardDetails').style.display = 'none';
+                }
+                
+                // Scroll to result
+                keyDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 3000);
+        });
+        
+        // Copy key to clipboard
+        copyBtn.addEventListener('click', () => {
+            const textToCopy = keyValue.textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const originalText = copyBtn.innerHTML;
+                copyBtn.innerHTML = '<i class="fas fa-check"></i> COPIED!';
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalText;
+                }, 2000);
+            });
+        });
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeSpins();
+            setInterval(updateTimer, 1000);
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
