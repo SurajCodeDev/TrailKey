@@ -1018,7 +1018,7 @@
         function checkNewDay() {
             const today = new Date().toDateString();
             if (lastSpinDate !== today) {
-                spinsLeft = 2;
+                spinsLeft = 5;
                 localStorage.setItem('spinsLeft', spinsLeft);
                 localStorage.setItem('lastSpinDate', today);
             }
@@ -1028,7 +1028,7 @@
         // Update spin count display
         function updateSpinCount() {
             spinCountElement.textContent = spinsLeft;
-            if (spinsLeft <= 5) {
+            if (spinsLeft <= 0) {
                 spinBtn.disabled = true;
             } else {
                 spinBtn.disabled = false;
@@ -1039,7 +1039,7 @@
         const rewards = [
             { 
                 type: 'trial', 
-                probability: 40,
+                probability: 60,
                 message: 'Congratulations! You won a Trial Key!',
                 title: 'YOUR TRIAL KEY:',
                 cssClass: 'trial-key'
@@ -1240,6 +1240,7 @@
     </script>
 </body>
 </html>
+
 
 
 
